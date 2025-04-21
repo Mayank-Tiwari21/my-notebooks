@@ -1,0 +1,6 @@
+v1
+{"path":"file:///home/hdoop/notebooks/data/spark_practice/csvToKafka/walmart_stock-Copy1.csv","timestamp":1742921740557,"batchId":0}
+{"path":"file:///home/hdoop/notebooks/data/spark_practice/csvToKafka/walmart_stock.csv","timestamp":1742922395404,"batchId":0}
+{"path":"file:///home/hdoop/notebooks/data/spark_practice/csvToKafka/walmart_stock-Copy2.csv","timestamp":1742922408071,"batchId":0}
+{"path":"file:///home/hdoop/notebooks/data/spark_practice/csvToKafka/walmart_stock-Copy3.csv","timestamp":1742963085619,"batchId":0}
+{"path":"file:///home/hdoop/notebooks/data/spark_practice/csvToKafka/walmart_stock-Copy4.csv","timestamp":1742963092959,"batchId":0}
