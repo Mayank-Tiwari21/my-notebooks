@@ -1,0 +1,11 @@
+Customer_ID,Name,Age,Gender,Country,Product,Category,Price,Quantity,Purchase_Date
+101,John Doe,28,Male,USA,Laptop,Electronics,1200.50,1,2024-01-15
+102,Alice Smith,35,Female,Canada,Smartphone,Electronics,800.75,2,2024-02-20
+103,Bob Johnson,45,Male,UK,Headphones,Accessories,150.00,3,2024-03-05
+104,Emma Davis,52,Female,Germany,Tablet,Electronics,400.25,1,2024-04-10
+105,Michael Brown,30,Male,India,Smartwatch,Accessories,250.99,2,2024-05-18
+106,Sophia Wilson,40,Female,USA,Monitor,Electronics,300.49,1,2024-06-22
+107,Liam Martinez,55,Male,Australia,Keyboard,Accessories,80.99,4,2024-07-30
+108,Olivia Garcia,29,Female,France,Mouse,Accessories,45.75,2,2024-08-14
+109,William Anderson,33,Male,Japan,Gaming Console,Electronics,500.99,1,2024-09-03
+110,Isabella Thomas,48,Female,Spain,Printer,Office Supplies,200.50,1,2024-10-12

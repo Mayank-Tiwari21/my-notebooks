@@ -1,0 +1,27 @@
+OrderID,CustomerName,OrderDate,Product,Category,Quantity,UnitPrice,TotalAmount,Discount
+1001,John Smith,2024-03-01,Laptop,Electronics,1,1200.0,1200.0,30.0
+1004,Emma Wilson,2024-03-04,Smartphone,Electronics,2,650.0,1300.0,32.5
+1006,Sarah Lee,2024-03-06,Blender,Appliances,1,90.0,90.0,0.0
+1007,David Miller,2024-03-07,Monitor,Electronics,2,200.0,400.0,0.0
+1011,Paul Walker,2024-03-11,Bookshelf,Furniture,2,120.0,240.0,0.0
+1012,Rachel Green,2024-03-12,Air Conditioner,Appliances,1,600.0,600.0,12.0
+1014,Olivia King,2024-03-14,Bed Frame,Furniture,1,500.0,500.0,0.0
+1016,Megan Lewis,2024-03-16,Camera,Electronics,1,900.0,900.0,18.0
+1018,Amy Adams,2024-03-18,Toaster,Appliances,2,40.0,80.0,0.0
+1019,Daniel Moore,2024-03-19,Wireless Earbuds,Electronics,3,100.0,300.0,0.0
+1022,Lily Cooper,2024-03-22,Desktop PC,Electronics,1,1000.0,1000.0,20.0
+1023,Logan Adams,2024-03-23,TV Stand,Furniture,1,220.0,220.0,0.0
+1025,Noah Bell,2024-03-25,Headphones,Electronics,2,120.0,240.0,0.0
+1027,Benjamin Cox,2024-03-27,Grill,Appliances,1,200.0,200.0,0.0
+1029,Liam Cook,2024-03-29,Bookshelf,Furniture,1,140.0,140.0,0.0
+1032,Charlotte Perry,2024-04-01,Closet,Furniture,1,600.0,600.0,12.0
+1033,Elijah Powell,2024-04-02,Blender,Appliances,2,90.0,180.0,0.0
+1034,Isabella Long,2024-04-03,Smart TV,Electronics,1,1200.0,1200.0,30.0
+1037,Aiden Butler,2024-04-06,Router,Electronics,2,60.0,120.0,0.0
+1039,Logan Morris,2024-04-08,Fan,Appliances,1,45.0,45.0,0.0
+1040,Aria Bryant,2024-04-09,Laptop,Electronics,1,1150.0,1150.0,28.75
+1042,Luna Hayes,2024-04-11,Washer,Appliances,1,850.0,850.0,17.0
+1044,Sofia Foster,2024-04-13,Bookshelf,Furniture,2,110.0,220.0,0.0
+1046,Chloe Brooks,2024-04-15,Tablet,Electronics,2,350.0,700.0,14.0
+1047,Levi Griffin,2024-04-16,TV Cabinet,Furniture,1,400.0,400.0,0.0
+1050,Ella Jordan,2024-04-19,Shoe Rack,Furniture,1,90.0,90.0,0.0

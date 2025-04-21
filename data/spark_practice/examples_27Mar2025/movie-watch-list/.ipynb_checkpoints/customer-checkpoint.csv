@@ -1,0 +1,6 @@
+customer_id,name,subscription
+1,Alice,active
+2,Bob,inactive
+3,Charlie,active
+4,David,active
+5,Eve,inactive

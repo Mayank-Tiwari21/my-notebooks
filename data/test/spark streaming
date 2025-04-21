@@ -1,0 +1,190 @@
+spark streaming done
+spark done
+airflow
+word count
+screen shot code done
+writing mode in spark streaming done
+
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import sum, count, desc
+from pyspark.sql.types import StructType, StructField, IntegerType, StringType, DoubleType
+
+# Initialize Spark Session
+spark = SparkSession.builder \
+    .appName("StreamingTransactions") \
+    .config("spark.sql.streaming.checkpointLocation", "/home/hadoopuser/Downloads/checkpoint") \
+    .getOrCreate()
+
+# Define Schema for Transactions
+schema = StructType([
+    StructField("transaction_id", IntegerType(), True),
+    StructField("customer_id", IntegerType(), True),
+    StructField("product_id", IntegerType(), True),
+    StructField("amount", DoubleType(), True),
+    StructField("timestamp", StringType(), True)
+])
+
+# Read Transactions Dataset as a Streaming DataFrame
+input_path = "/home/hadoopuser/Downloads/transactions_streaming"
+transactions_df = spark.readStream \
+    .schema(schema) \
+    .json(input_path)
+
+# Display New Transactions in Real-Time
+query1 = transactions_df.writeStream \
+    .format("console") \
+    .outputMode("append") \
+    .start()
+
+# Write Streaming Transactions to CSV with Checkpointing
+output_path = "/home/hadoopuser/Downloads/stream_output"
+query2 = transactions_df.writeStream \
+    .format("csv") \
+    .option("path", output_path) \
+    .option("checkpointLocation", "/home/hadoopuser/Downloads/checkpoint") \
+    .outputMode("append") \
+    .start()
+
+# Compute Real-Time Total Sales Per Product
+total_sales_df = transactions_df.groupBy("product_id").agg(
+    sum("amount").alias("total_sales")
+)
+
+query3 = total_sales_df.writeStream \
+    .format("console") \
+    .outputMode("complete") \
+    .start()
+
+# Find Real-Time Top 5 Best-Selling Products
+top_products_df = total_sales_df.orderBy(desc("total_sales")).limit(5)
+
+query4 = top_products_df.writeStream \
+    .format("console") \
+    .outputMode("complete") \
+    .start()
+
+# Write Streaming Output to PostgreSQL Table
+postgresql_url = "jdbc:postgresql://localhost:5432/yourdatabase"
+postgresql_properties = {
+    "user": "yourusername",
+    "password": "yourpassword",
+    "driver": "org.postgresql.Driver"
+}
+
+def write_to_postgres(batch_df, batch_id):
+    batch_df.write \
+        .jdbc(url=url, table="orders", mode="append", properties=propert)
+
+query5 = top_products_df.writeStream \
+    .foreachBatch(write_to_postgres) \
+    .outputMode("complete") \
+    .start()
+
+# Wait for Streaming Queries to Finish
+query1.awaitTermination()
+query2.awaitTermination()
+query3.awaitTermination()
+query4.awaitTermination()
+query5.awaitTermination()
+
+########################
+DAG########
+
+
+from datetime import datetime
+from airflow import DAG
+from airflow.operators.python import PythonOperator,BranchPythonOperator
+from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
+from airflow.providers.mysql.hooks.mysql import MySqlHook
+from airflow.providers.postgres.hooks.postgres import PostgresHook
+from airflow.utils.task_group import TaskGroup
+from airflow.providers.postgres.operators.postgres import PostgresOperator
+from airflow.operators.bash import BashOperator
+from airflow.operators.empty import EmptyOperator
+
+
+
+from random import randint
+
+
+#function python with cursor and connection
+def new_read_func(**kwargs):
+    postgres = PostgresHook(postgres_conn_id = "my_postgres_connection")
+    conn = postgres.get_conn()
+    cursor =conn.cursor()
+    cursor.execute("select *  from tt;")
+    result = cursor.fetchall()
+
+    for row in result:
+        print(row)
+    
+    kwargs["ti"].xcom_push(key ="raw",value = result)
+    cursor.close()
+    conn.close()
+
+def filter_data(**kwargs):
+    result = kwargs["ti"].xcom_pull(task_ids = "<task_id>",key = "raw")
+    filtered_data = [row for row in result if row[2]=="Finance"]
+
+    for row in filtered_data:
+        print(row)
+
+
+def brancher(**kwargs):
+    data = kwargs["ti"].xcom_pull(task_ids = ["thirdPythontask","fourthPythonTask"])
+    max_data = sorted(data)
+    if max_data>5:
+        return "new_grt"
+    return "old_grt"
+
+def random_val():
+    r = randint(0,10)
+    return r 
+
+
+
+
+
+with DAG("my_dag",
+         default_args=Default,
+         start_date=datetime(2025,3,12),
+         catchup=True,
+         schedule_interval="10 * 21 03 *") as my_dag:
+    
+    task1 = PythonOperator(task_id= "myfirstPythonTask",
+                           python_callable=new_read_func)
+    task2 = PythonOperator(task_id = "mysecondPythonTask",
+                           python_callable = new_read_func)
+
+
+
+
+    ### taskgroup
+    with TaskGroup(group_id="grouptask") as tasking_grp:
+        task_g1 = PostgresOperator(task_id = "firstpostgrestask",
+                                   postgres_conn_id="my_posgres_connection",
+                                   sql = "select * from tt;")
+        taskg2 = SQLExecuteQueryOperator(task_id ="sqlTaskgrp",
+                                         conn_id="my_sql_connection",
+                                         sql="select * from tt;")
+        task_g1>>taskg2
+
+
+
+
+
+    task_3 = PythonOperator(task_id = "thirdPythontask",
+                            python_callable=random_val)
+    task_4 = PythonOperator(task_id = "fourthPythonTask",
+                            python_callable=random_val)
+
+#branch python operator
+    task_dec = BranchPythonOperator(task_id = "branch",
+                                    python_callable=brancher)
+    
+    task_5  =BashOperator(task_id = "firstBashTAsk",
+                          bash_command='echo "Hello"')
+#bashoperator
+    task_6 = BashOperator(task_ids = "secondBashTask",
+                          bash_command='echo "heh"')
+    task1>>task2>>tasking_grp>>[task_3,task_4]>>task_dec>>[task_5,task_6]

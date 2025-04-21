@@ -1,0 +1,9 @@
+
+customer_id|name|subscription|movie_id|cus_id|date|director|actor|description
+1|Alice|active|101|1|2024-03-01|Christopher Nolan|Leonardo DiCaprio|A mind-bending thriller about dreams within dreams.
+2|Bob|inactive|102|2|2024-03-05|Steven Spielberg|Tom Hanks|A gripping war drama set during World War II.
+3|Charlie||103|3|2024-03-10|Quentin Tarantino|Samuel L. Jackson|A stylish crime movie with sharp dialogues.
+4|David|active|104||2024-03-15|Martin Scorsese|Robert De Niro|A classic gangster film about power and betrayal.
+5|Eve|inactive|105|5| |James Cameron|Kate Winslet|A romantic drama set on the ill-fated Titanic.
+6||active|106|6|2024-03-25|Ridley Scott|Russell Crowe|An epic historical drama set in ancient Rome.
+7|Grace|inactive|||2024-03-30|Stanley Kubrick|Jack Nicholson|A psychological horror film set in a haunted hotel.

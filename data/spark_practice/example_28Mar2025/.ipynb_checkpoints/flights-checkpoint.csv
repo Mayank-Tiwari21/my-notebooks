@@ -1,0 +1,6 @@
+customer_id,flight_id,origin,destination
+1,101,Delhi,Hyderabad
+1,102,Hyderabad,Kochi
+1,103,Kochi,Mangalore
+2,201,Mumbai,Ayodhya
+2,202,Ayodhya,Gorakhpur

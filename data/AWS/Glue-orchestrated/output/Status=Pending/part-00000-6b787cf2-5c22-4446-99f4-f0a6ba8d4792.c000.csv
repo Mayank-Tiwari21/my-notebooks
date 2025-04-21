@@ -1,0 +1,8 @@
+OrderID,CustomerName,OrderDate,Product,Category,Quantity,UnitPrice,TotalAmount,Discount
+1005,Chris Evans,2024-03-05,Office Desk,Furniture,1,400.0,400.0,0.0
+1010,Linda Davis,2024-03-10,Tablet,Electronics,3,300.0,900.0,18.0
+1017,Henry Young,2024-03-17,Dining Table,Furniture,1,700.0,700.0,14.0
+1021,Jackson Wright,2024-03-21,Juicer,Appliances,1,110.0,110.0,0.0
+1028,Emily Ward,2024-03-28,Drone,Electronics,1,800.0,800.0,16.0
+1035,Lucas Bailey,2024-04-04,Coffee Table,Furniture,1,180.0,180.0,0.0
+1045,Jack Ramirez,2024-04-14,Vacuum Cleaner,Appliances,1,140.0,140.0,0.0

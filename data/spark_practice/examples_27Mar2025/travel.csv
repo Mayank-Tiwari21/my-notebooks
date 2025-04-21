@@ -1,0 +1,8 @@
+customer_id,start_location,end_location
+C1,London,Paris
+C1,Paris,Berlin
+C1,Berlin,New Delhi
+C2,Mumbai,Pune
+C2,Pune,Hyderabad
+C3,Kochi,Lucknow
+C3,Lucknow,Agra

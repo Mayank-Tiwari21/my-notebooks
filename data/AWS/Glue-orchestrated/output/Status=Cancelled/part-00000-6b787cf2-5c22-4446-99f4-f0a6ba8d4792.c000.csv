@@ -1,0 +1,8 @@
+OrderID,CustomerName,OrderDate,Product,Category,Quantity,UnitPrice,TotalAmount,Discount
+1003,Bob Martin,2024-03-03,Coffee Maker,Appliances,1,80.0,80.0,0.0
+1009,James Scott,2024-03-09,Microwave,Appliances,1,150.0,150.0,0.0
+1015,Ethan Clark,2024-03-15,Vacuum Cleaner,Appliances,1,130.0,130.0,0.0
+1024,Ava Torres,2024-03-24,Heater,Appliances,1,75.0,75.0,0.0
+1031,Mason Price,2024-03-31,Game Console,Electronics,1,450.0,450.0,0.0
+1041,Carter Hughes,2024-04-10,Office Chair,Furniture,1,200.0,200.0,0.0
+1049,Owen West,2024-04-18,Smartphone,Electronics,1,700.0,700.0,14.0

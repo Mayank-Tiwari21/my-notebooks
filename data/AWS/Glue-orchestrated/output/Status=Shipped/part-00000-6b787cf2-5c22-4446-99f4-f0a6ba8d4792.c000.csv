@@ -1,0 +1,11 @@
+OrderID,CustomerName,OrderDate,Product,Category,Quantity,UnitPrice,TotalAmount,Discount
+1002,Alice Brown,2024-03-02,Desk Chair,Furniture,2,150.0,300.0,0.0
+1008,Nina Patel,2024-03-08,Sofa,Furniture,1,800.0,800.0,16.0
+1013,George Hall,2024-03-13,Smartwatch,Electronics,1,250.0,250.0,0.0
+1020,Sophia Hill,2024-03-20,Recliner Chair,Furniture,1,550.0,550.0,11.0
+1026,Grace Reed,2024-03-26,Cabinet,Furniture,1,350.0,350.0,0.0
+1030,Mia Ross,2024-03-30,Dishwasher,Appliances,1,500.0,500.0,0.0
+1036,Evelyn Sanders,2024-04-05,Fridge,Appliances,1,1000.0,1000.0,20.0
+1038,Harper Barnes,2024-04-07,Nightstand,Furniture,1,150.0,150.0,0.0
+1043,Wyatt Simmons,2024-04-12,Monitor,Electronics,1,250.0,250.0,0.0
+1048,Layla Stone,2024-04-17,Hair Dryer,Appliances,1,60.0,60.0,0.0
