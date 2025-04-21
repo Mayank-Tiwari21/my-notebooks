@@ -1,0 +1,23 @@
+invoice_no,gstin,supplier_gstin,invoice_date,category
+6,F,a6,2024-01-08,Type D
+18,R,a18,2024-01-20,Type D
+11,K,a11,2024-01-13,Type D
+20,T,a20,2024-01-22,Type D
+5,E,a5,2024-01-07,Type D
+3,C,a3,2024-01-05,Type D
+12,L,a12,2024-01-14,Type D
+16,P,a16,2024-01-18,Type D
+9,I,a9,2024-01-11,Type D
+8,H,a8,2024-01-10,Type D
+17,Q,a17,2024-01-19,Type D
+24,X,a24,2024-01-26,Type D
+19,S,a19,2024-01-21,Type D
+23,W,a23,2024-01-25,Type D
+2,B,a2,2024-01-04,Type D
+21,U,a21,2024-01-23,Type D
+14,N,a14,2024-01-16,Type D
+1,A,a1,2024-01-03,Type D
+22,V,a22,2024-01-24,Type D
+10,J,a10,2024-01-12,Type D
+7,G,a7,2024-01-09,Type D
+15,O,a15,2024-01-17,Type D
